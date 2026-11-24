@@ -1,0 +1,24 @@
+{
+  "status": "scored",
+  "n": 82,
+  "archive_count": 132,
+  "series": "DHHNGSP",
+  "excluded_price_windows": [
+    "2021-01-01"
+  ],
+  "archive_start": "2015-01-02",
+  "archive_end": "2025-12-05",
+  "first_decision": "2019-01-04",
+  "last_decision": "2025-11-07",
+  "analogue_mae": 0.488659,
+  "seasonal_mae": 0.481524,
+  "mae_difference": 0.007134,
+  "ci95": [
+    -0.01378,
+    0.029268
+  ],
+  "target": "Fifth quoted spot observation dated after the decision minus the latest spot mark in its ALFRED vintage, $/MMBtu.",
+  "decision_rule": "End of first Friday of each month. At least 48 earlier labeled decisions and three from the same season.",
+  "match_rule": "Ten closest earlier decisions by training-scaled 1- and 5-observation percentage change, 5-return volatility and season.",
+  "interval_method": "Paired circular moving-block bootstrap, 3 monthly decisions per block, 2000 draws, seed 7351."
+}

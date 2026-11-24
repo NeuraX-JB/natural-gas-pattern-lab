@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Natural Gas Pattern Lab</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="head-inner">
+        <a
+          class="identity"
+          href="#explore"
+          aria-label="Natural Gas Pattern Lab home"
+        >
+          <span class="mark" aria-hidden="true"
+            ><i></i><i></i><i></i><i></i
+          ></span>
+          <span>Natural Gas <b>Pattern Lab</b></span>
+        </a>
+        <nav class="top-nav" aria-label="Workspace">
+          <a id="nav-explore" href="#explore" aria-current="page">Explorer</a>
+          <a id="nav-research" href="#research">Research</a>
+        </nav>
+        <span class="byline">John Barreto</span>
+      </div>
+    </header>
+    <main>
+      <section id="explore-view" aria-labelledby="explorer-title">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Henry Hub · U.S. spot market</p>
+            <h1 id="explorer-title">Pattern explorer</h1>
+            <p>
+              Find earlier dates with the same conditions and see what happened
+              next.
+            </p>
+          </div>
+          <div class="coverage" id="coverage"></div>
+        </div>
+        <div class="explorer-grid">
+          <aside class="controls panel" aria-label="Query settings">
+            <div class="aside-section">
+              <label class="section-title" for="date-input">Market date</label>
+              <div class="date-control">
+                <button
+                  type="button"
+                  id="prev-date"
+                  aria-label="Previous observation"
+                >
+                  ‹
+                </button>
+                <input
+                  type="date"
+                  id="date-input"
+                  aria-label="As-of market date"
+                />
+                <button
+                  type="button"
+                  id="next-date"
+                  aria-label="Next observation"
+                >
+                  ›
+                </button>
+              </div>
+              <p id="date-note" class="quiet small" aria-live="polite"></p>
+            </div>
+            <div class="aside-section" id="exact-controls">
+              <div class="section-line">
+                <h2 class="section-title">Match conditions</h2>
+                <button type="button" id="reset" class="text-button">
+                  Reset
+                </button>
+              </div>
+              <p class="help">
+                Every checked condition must match. Change a value to test your
+                own rule.
+              </p>
+              <div id="sequence-box">
+                <label for="sequence-input"
+                  >Move sequence <span>Oldest first</span></label
+                >
+                <form id="sequence-form">
+                  <input
+                    id="sequence-input"
+                    type="text"
+                    maxlength="70"
+                    placeholder="e.g. Down, +8"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <button type="submit">Apply</button>
+                </form>
+                <p class="sequence-help">
+                  Use Up, Flat, Down, signed cents or * for any move. Up to 10
+                  observations.
+                </p>
+                <button class="preset" type="button" id="preset">
+                  Down then +8¢
+                </button>
+                <button
+                  class="preset"
+                  type="button"
+                  id="physical-preset"
+                  hidden
+                >
+                  Storage deficit · HDD up · CDD flat
+                </button>
+              </div>
+              <div id="fields"></div>
+            </div>
+            <div class="aside-section" id="analogue-controls" hidden>
+              <h2 class="section-title">Similarity weights</h2>
+              <p class="help">
+                The engine compares earlier observations with the selected
+                market date.
+              </p>
+              <div id="weights"></div>
+            </div>
+            <div class="aside-foot" id="source"></div>
+          </aside>
+          <div id="work-area" class="work-area" aria-busy="true">
+            <div class="mode-bar">
+              <div class="mode-switch" role="group" aria-label="Match method">
+                <button type="button" id="exact-tab" aria-pressed="true">
+                  Exact occurrences
+                </button>
+                <button type="button" id="analogue-tab" aria-pressed="false">
+                  Nearest analogues
+                </button>
+              </div>
+              <a class="download" id="export" download
+                >Export CSV <span aria-hidden="true">↓</span></a
+              >
+            </div>
+            <div id="query-error" class="error" role="alert" hidden></div>
+            <div id="results" aria-live="polite">
+              <p class="panel empty">Loading historical observations…</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="research-view" aria-labelledby="research-title" hidden>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Henry Hub · Out-of-sample evidence</p>
+            <h1 id="research-title">Research results</h1>
+            <p>
+              See how the analogue method and recurring conditions performed on
+              later observations.
+            </p>
+          </div>
+        </div>
+        <div id="research-content" aria-live="polite"></div>
+      </section>
+    </main>
+    <footer>
+      <span>Natural Gas Pattern Lab</span
+      ><span>Outcomes in US dollars per MMBtu unless otherwise specified.</span>
+    </footer>
+  </body>
+</html>

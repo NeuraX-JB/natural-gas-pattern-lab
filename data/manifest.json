@@ -1,0 +1,139 @@
+{
+  "edition": "2026-11-24",
+  "description": "Frozen research inputs and their provenance. Source indices contain the per-vintage digests. Dates are ISO 8601.",
+  "spot.csv": {
+    "rows": 4524,
+    "sha256": "8c08cbdaa20e607c0da934119df07624861e608449484b0e2670d3fb7c690d64",
+    "source": "DataHub / datasets/natural-gas compiled from U.S. EIA; EIA attributes the spot series to Refinitiv (LSEG)",
+    "upstream_commit": "fe9c40ee28516489b055736045746dd7faf00898",
+    "source_raw_sha256": "e0c99db057edde096a19150756ee52c52918cc68267f7385930585892410f064",
+    "cross_check_series": "FRED DHHNGSP",
+    "cross_check_raw_sha256": "381f9a5569736ad328236eefcc001a55f788487420823518daf6b81636a0ce19",
+    "min_date": "2008-01-02",
+    "max_date": "2025-12-31",
+    "units": "USD/MMBtu",
+    "historical_availability": "latest-vintage observations; quote-date replay only",
+    "missing_numeric_rows_omitted": [
+      "2018-01-05"
+    ],
+    "upstream_database_license": "ODC-PDDL-1.0 (DataHub package)"
+  },
+  "storage.csv": {
+    "rows": 845,
+    "sha256": "5dee0767de6b7b7a7004a2147f56a4a92deaf24ef55ebc81753188e050a5a422",
+    "source": "U.S. EIA Natural Gas Weekly Update; Lower 48 total working gas",
+    "min_period": "2010-01-08",
+    "max_period": "2025-12-12",
+    "distinct_storage_fridays": 832,
+    "first_publication": "2012-01-05T23:59:00-05:00",
+    "last_publication": "2025-12-18T23:59:00-05:00",
+    "rows_with_official_five_year_average": 661,
+    "units": "Bcf",
+    "timing": "archived edition date at 23:59 America/New_York"
+  },
+  "storage_issues.csv": {
+    "rows": 673,
+    "sha256": "ace16dce0bb6e7cba15a863cf863302076a52079a36739a3caf222328284316a",
+    "first_edition": "2012-01-05",
+    "last_edition": "2025-12-18",
+    "archive_release_dates_considered": 679,
+    "unretrieved_editions": [],
+    "editions_excluded_after_parsing": {
+      "2012-03-29": "invalid inventory point",
+      "2013-06-20": "printed date differs from archive index",
+      "2014-07-17": "conflicting inventory within issue",
+      "2015-04-23": "printed date differs from archive index",
+      "2015-10-29": "time data 'Ootober 29 2015' does not match format '%b %d %Y'",
+      "2017-08-03": "ambiguous or missing working-gas series"
+    },
+    "data_url_template": "https://www.eia.gov/naturalgas/weekly/archivenew_ngwu/{YYYY}/{MM}_{DD}/",
+    "digest_definition": "SHA-256 of canonical date, level and current-week comparison CSV defined by rebuild.issue_digest"
+  },
+  "weather.csv": {
+    "rows": 618,
+    "sha256": "4885d4dfbefeb6f0427ca9e4fa9330bb090210de3df270893ee1aff962503599",
+    "source": "NOAA CPC population-weighted CONUS NDFD 7-day forecasts",
+    "sampled_calendar_rule": "first Wednesday each month, 2016 through 2025, versus previous calendar day",
+    "distinct_run_pairs": 103,
+    "first_current_run": "2016-01-06T00:00:00+00:00",
+    "last_current_run": "2025-12-03T00:00:00+00:00",
+    "excluded_pairs": [
+      [
+        "2020-01-01",
+        "source weight or same-day archived file timestamp unavailable"
+      ],
+      [
+        "2023-01-04",
+        "invalid forecast interval"
+      ],
+      [
+        "2020-02-05",
+        "source weight or same-day archived file timestamp unavailable"
+      ],
+      [
+        "2024-02-07",
+        "HTTP Error 404: Not Found"
+      ],
+      [
+        "2020-03-04",
+        "source weight or same-day archived file timestamp unavailable"
+      ],
+      [
+        "2024-03-06",
+        "HTTP Error 404: Not Found"
+      ],
+      [
+        "2018-04-04",
+        "invalid forecast interval"
+      ],
+      [
+        "2020-04-01",
+        "source weight or same-day archived file timestamp unavailable"
+      ],
+      [
+        "2022-06-01",
+        "invalid forecast interval"
+      ],
+      [
+        "2019-07-03",
+        "source weight or same-day archived file timestamp unavailable"
+      ],
+      [
+        "2018-08-01",
+        "invalid forecast interval"
+      ],
+      [
+        "2022-08-03",
+        "HTTP Error 404: Not Found"
+      ],
+      [
+        "2023-08-02",
+        "invalid forecast interval"
+      ],
+      [
+        "2021-09-01",
+        "invalid forecast interval"
+      ],
+      [
+        "2018-10-03",
+        "invalid forecast interval"
+      ],
+      [
+        "2022-11-02",
+        "invalid forecast interval"
+      ],
+      [
+        "2022-12-07",
+        "invalid forecast interval"
+      ]
+    ],
+    "units": "Fahrenheit degree days (65 F base)",
+    "timing": "latest NOAA HTTP Last-Modified across all four same-issue-date source files"
+  },
+  "weather_sources.csv": {
+    "rows": 412,
+    "sha256": "c1d5fd148b147409f3de06a3c6708afe686ff015836e0a8f2aad2492ac91d712",
+    "data_url_template": "https://ftp.cpc.ncep.noaa.gov/htdocs/degree_days/weighted/daily_forecasts_7day/{YYYY}/{MM}/{DD}/Population.{metric}.txt",
+    "digest_definition": "SHA-256 of raw NOAA source body"
+  }
+}

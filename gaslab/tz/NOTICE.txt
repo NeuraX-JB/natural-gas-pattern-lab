@@ -1,0 +1,4 @@
+America/New_York TZif, compiled from IANA time zone database 2026c.
+Source: https://www.iana.org/time-zones
+The IANA time zone database is in the public domain. This fallback supports
+Python installations that do not include a system time zone database.

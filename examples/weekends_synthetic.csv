@@ -1,0 +1,6 @@
+friday_date,schedule,friday_contract,friday_settle,reopen_date,reopen_contract,reopen_price,monday_date,monday_contract,monday_settle
+2024-01-05,regular,NG-2024-03,3.000,2024-01-07,NG-2024-03,3.100,2024-01-08,NG-2024-03,3.150
+2024-01-12,holiday,,,,,,,,
+2024-01-19,regular,NG-2024-03,3.100,2024-01-21,NG-2024-03,3.200,2024-01-22,NG-2024-03,3.150
+2024-01-26,regular,NG-2024-03,3.000,2024-01-28,NG-2024-03,2.900,2024-01-29,NG-2024-03,2.950
+2024-02-02,regular,NG-2024-03,3.000,2024-02-04,NG-2024-04,3.400,2024-02-05,NG-2024-04,3.500
